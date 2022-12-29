@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@500&family=Merriweather&family=Open+Sans&family=Oxygen+Mono&family=Roboto+Mono:wght@100;300&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Irais Valenzuela's Portfolio</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- navigation bar -->
+  <nav>
+    <ul>
+      <li>
+        <h1><a href="index.html"> <i class="fab fa-js-square"></i> Irais Valenzuela</a></h1>
+      </li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about-me">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/irais-valenzuela/" target="_blank"><i class="fab fa-linkedin"
+            aria-hidden="true"></i><span class="sr-only">Linkedin</span></a></li>
+      <li><a href="https://github.com/irais-valenzuela" target="_blank"><i class="fab fa-github-square"
+            aria-hidden="true"></i><span class="sr-only">GitHub</span></a></li>
+      <li><a class="button" href="https://docs.google.com/document/d/1FgrbJj4ulArwJQdUX-3Cco0FxBXDLmW9la3sQBl0EB0/edit"
+          target="_blank">Resume</a></li>
+    </ul>
+  </nav>
+
+  <div class="gradient"></div>
+
+  <!-- Introduction -->
+  <section id="intro">
+    <p class="name"> Hi, my name is <span>Irais Valenzuela.</span></p>
+    <h2>I'm a Fullstack Software Engineer.</h2>
+    <p>I completed the <a class="a" href="https://www.gracehopper.com/programs/coding-bootcamp" target="_blank">Grace
+        Hopper Coding Bootcamp </a> at Fullstack Academy, in December 2022. In the bootcamp I learned and coded projects
+      using the NERD stack (Node.js, Express.js, React,js, Relational Databases). I am now seeking employment as a
+      remote Javascript Fullstack Software Engineer. </p>
+  </section>
+
+  <div class="gradient"></div>
+
+  <div class="section-orange">
+
+    <div class="section-blue">
+
+      <!-- Projects -->
+
+      <div class="gradient"></div>
+
+      <section id="projects">
+        <h2>Projects I'm proud of</h2>
+        <!-- PartyPal -->
+        <section id="projects">
+          <article>
+            <div class="text">
+              <h4>Featured Project</h4>
+              <div class='height'></div>
+              <h3>PartyPal</h3>
+              <p><a href='https://partypal.onrender.com/' target="_blank">PartyPal</a> is an application where you can
+                find a curated list of highly rated caterer and venue recommendations based on location for your next
+                party! I worked on integrating the Yelp API into our application to render venues and caterers onto our
+                application. I also learned GraphQL to get specific data from the Yelp API to optimize the results we
+                got back from our API calls. I also designed various views of our application incorporating styling
+                frameworks like Material UI and React Bootstrap. Lastly, I developed the like functionality so when a
+                user likes a venue or caterer it can be saved onto their account and in our database. <a
+                  href='https://github.com/Team-Ada-Lovelace/Capstone-PartyPal' target="_blank">PartyPal GitHub</a></p>
+              <h4>Technologies used include</h4>
+              <div class='height'></div>
+              <ul class="technologies">
+                <li>Node.js</li>
+                <li>React.js</li>
+                <li>Redux.js</li>
+                <li>Express.js</li>
+                <li>Sequelize.js</li>
+                <li>GraphQl</li>
+                <li>Yelp API</li>
+                <li>Styled-components</li>
+                <li>Material-UI</li>
+                <li>React Bootstrap</li>
+              </ul>
+            </div>
+            <img class="img" src="images/PartyPal Venue results.png"
+              alt="Image of PartyPal Venue results for New York City.">
+          </article>
+        </section>
+
+        <div class="gradient"></div>
+        <!-- Cuidate -->
+        <section id="projects">
+          <article>
+            <div class="text">
+              <h4>Featured Project</h4>
+              <div class='height'></div>
+              <h3>Cuidate</h3>
+              <p>Cuidate ('take care' in English) is a web application that randomly generates self-care activities for
+                a user to try based on their answer to a check-in page. I worked on fetching random self-care activities
+                from the database based on how the user responded to a check-in question. I also worked on rendering the
+                self-care activity on the front-end. In addition, I designed the web application views with CSS and
+                Styled-Components. <a href='https://github.com/irais-valenzuela/cuidate' target="_blank"> Cuidate
+                  GitHub</a></p>
+              <h4>Technologies used include</h4>
+              <div class='height'></div>
+              <ul class="technologies">
+                <li>Node.js</li>
+                <li>React.js</li>
+                <li>Redux.js</li>
+                <li>Express.js</li>
+                <li>Sequelize.js</li>
+                <li>Styled-components</li>
+              </ul>
+            </div>
+            <img class="img" src="images/Cuidate Check-in Page.png" alt="Cuidate check-in page.">
+          </article>
+        </section>
+        <div class="gradient"></div>
+        <!-- Green Garden -->
+        <section id="projects">
+          <article>
+            <div class="text">
+              <h4>Featured Project</h4>
+              <div class='height'></div>
+              <h3>Green Garden</h3>
+              <p><a href='https://green-garden.onrender.com/home' target="_blank">Green Garden</a> is a mock e-commerce
+                web application where users can browse plants and purchase them. I was responsible for the logged-in
+                user experience functionality, which included logging in users with JSON Web Token and designing their
+                shopping experience from browsing items to purchasing items on the application. Specifically, I
+                developed the CRUD operations needed for a cart such as viewing existing items in a
+                cart, adding items to a cart, updating cart items, and deleting items from cart. <a
+                  href='https://github.com/Grace-Shopper-Dream-Team/Grace-Shopper'>Green Garden GitHub</a></p>
+              <h4>Technologies used include</h4>
+              <div class='height'></div>
+              <ul class="technologies">
+                <li>Node.js</li>
+                <li>React.js</li>
+                <li>Redux.js</li>
+                <li>Express.js</li>
+                <li>Sequelize.js</li>
+                <li>React Bootstrap</li>
+              </ul>
+            </div>
+            <img class="img" src="images/Green Garden Logged in user Cart.png" alt="Green Garden Logged in user Cart.">
+          </article>
+        </section>
+        <div class="gradient"></div>
+        <!-- Number Guessing Game -->
+        <section id="projects">
+          <article>
+            <div class="text">
+              <h4>Featured Project</h4>
+              <div class='height'></div>
+              <h3>Number Guessing Game</h3>
+              <p><a href='https://irais-valenzuela.github.io/guessing-game/' target="_blank">Number Guessing Game</a> is
+                a web application where a player gets five chances to guess the correct number between 1 - 100. I
+                developed the functionality for a player to submit a guess, get hints to what the correct number is, and
+                reset the game. I also show the player helpful messages after submitting a guess letting them know if
+                they are getting warmer or colder to the correct answer.</p>
+              <h4>Technologies used include</h4>
+              <div class='height'></div>
+              <ul class="technologies">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+            <img class="img"
+              src="https://lh3.googleusercontent.com/kSf_PFBNjkAGxj0IBi8xLY2VlUkZfisgrR1kNPiyCSoPVhr483vNrqNNqtS3ptfKj4mSNPqGZJP2j_EEgSYsUM3-2zGOzE-SrD70uqay86ADSL13vcsCJXwpVxPe0Cu_s3kMnZgzFw=w600-h315-p-k"
+              alt="Screenshot of Number Guessing Game">
+          </article>
+        </section>
+      </section>
+
+      <div class="gradient"></div>
+      <!-- About me -->
+      <div class="light-blue">
+        <section id="about-me" class="dark-red">
+          <article>
+            <div class="text">
+              <h1 class="font-for-heading1">About Irais Valenzuela</h1>
+              <h3 class="just-the-highlights">Just the highlights</h3>
+              <!-- <p class="about-me-p">
+                I am a proud first-generation Latina who earned a B.A. in Psychology from the
+                University of California, Riverside in June 2021.
+                <br></br>
+
+                In my last year of college, I took a coding class in which I coded some projects. Taking this class
+                sparked my interest in coding and Software Engineering. I have always enjoyed creating and building
+                things from scratch. I love how coding allows me to build great projects from idea to finished product.
+                After the Bootcamp, I hope to work for a company that builds software that helps people. Aside, from
+                coding I enjoy going on walks, singing, and learning more about psychology.
+                <br></br>
+                Technical Skills:
+                Proficient: Node, Javascript, React / Redux, Sequelize, Express, Axios, Git, Github,
+                Knowledgeable: HTML5, CSS, Styled Components, PostGresSQL, GraphQL, Postico, ThunderClient, APIs
+                <br></br>
+                github.com/irais-valenzuela
+              </p> -->
+              <p class='about-me-p'>
+                Hi there👋🏻, my name is Irais Valenzuela and I am a recent software engineer graduate from the Grace
+                Hopper coding
+                bootcamp at Fullstack Academy in New York City. Before starting my journey as a Software Engineer I was
+                a college student majoring in Psychology. In
+                my senior year of college, I took an Intro to programming course because I wanted to explore the world
+                of coding. In the course I built and designed a static web application using HTML and CSS. I really
+                enjoyed building and designing the web application but what hooked me to coding was how powerful a line
+                of code is and how a single line of code can create a change on the browser. I like how intellectually
+                stimulating code is. After college, I completed the GH program in NYC where I built 4 projects using
+                NERD stack as well as GraphQl and third party APIs. Aside, from
+                coding I enjoy going on walks, singing, and learning more about psychology. I hope to work as a remote
+                full stack javascript
+                software engineer for a company that builds software that helps people.
+              </p>
+              <h4>Technical Skills</h4>
+              <ul class='no-bullet-points'>
+                <li>Proficient: Node, Javascript, React / Redux, Sequelize, Express, Axios, Git, Github</li>
+                <li>Knowledgeable: HTML5, CSS, Styled Components, PostGresSQL, GraphQL, Postico, ThunderClient, APIs
+                </li>
+              </ul>
+              <a href='https://github.com/irais-valenzuela'>Checkout my GitHub</a>
+              <div class='height'></div>
+          </article>
+        </section>
+
+        <div class="gradient"></div>
+
+        <div class="section-plum">
+
+          <!-- Contact Me -->
+          <section id="contact">
+            <h2 class="sans">Contact me📫 </h2>
+            <p>I'm always interested in hearing about job opportunties.</p>
+            <p><a class="button" class="email-me" href="mailto:iraisvq8@gmail.com">Email Me</a></p>
+          </section>
+</body>
+</div>
+
+<!-- Footer -->
+<div class="gradient"></div>
+<footer class="footer">
+  <h2>Irais Valenzuela &middot; FullStack Software Engineer</h2>
+  <ul>
+    <li><a class="footer-icons" href="https://www.linkedin.com/in/irais-valenzuela/" target="_blank"><i
+          class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">Linkedin</span></a> </li>
+    <li><a class="footer-icons" href="https://github.com/irais-valenzuela" target="_blank"><i
+          class="fab fa-github-square" aria-hidden="true"></i><span class="sr-only">Github</span></a></li>
+    <li><a class="footer-icons" href="mailto:iraisvq8@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i><span
+          class="sr-only>"></span></a></li>
+  </ul>
+  <p><small> &copy; 2022 Irais Valenzuela. All rights reserved.</small></p>
+</footer>
+</body>
+
+</html>
