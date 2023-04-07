@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.website-name-on-navbar{
+  color: green;
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 100%
+
+}
+
+.get-started {
+  color: white;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.no-underlining {
+  text-decoration: none;
+}
+
+.home-link {
+  color: black;
+  text-decoration: none;
+  margin: 1.4rem;
+  font-size: 19px
+}
+
+.nav-margin {
+  margin: 1rem
+}
+
+h3 {
+  font-size: 4rem;
+  color: green;
+  background-color: orange;
+  border-radius: 25px;
+}
+
+p {
+  font-size: 25px;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.bold-text-for-modal {
+  font-weight: bold
+}
+
+form {
+  margin: 1rem;
+}
+
+.flex-for-form {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.my-div {
+  width: 100%;
+  height: 100%;
+  transition: transform 300ms;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 1rem
+}
+
+.my-div:hover {
+  transform: scale(1.075);
+}
+
+.results {
+  background-color: rgb(239, 201, 186);
+  border-radius: 20px;
+  width: 50%
+  
+}
+
+.results-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem
+}
+
+.circular-edge {
+  border-radius: 20px;
+}
+
+.font-for-results {
+  font-size: 30px;
+}
