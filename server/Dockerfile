@@ -6,10 +6,8 @@ ARG USERNAME=vscode
 # Set the working directory
 WORKDIR /app
 
-# Copy the requirements file and install dependencies
+# Copy the requirements file, app code, and install dependencies
 COPY requirements.txt .
-
-# Copy the application code
 COPY app .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -27,4 +25,3 @@ EXPOSE 8000
 
 # Command to run the FastAPI application using Python
 CMD ["python", "main.py", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-
