@@ -29,3 +29,6 @@ def read_root():
     logger.info("Root endpoint called")
     return {"Hello": "World"}
 
+import time
+while True:
+    time.sleep(100)
