@@ -1,4 +1,7 @@
-// client/pages/index.js
-export default function Home() {
-  return <div>Welcome to Next.js!</div>;
-}
+const Home = () => (
+  <div>
+    <h1>Welcome to Trially Task Management</h1>
+  </div>
+);
+
+export default Home;
