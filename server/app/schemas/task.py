@@ -1,20 +1,22 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from typing import Optional
 from datetime import date
-import enum
-
-
-class TaskStatus(str, enum.Enum):
-    pending = "pending"
-    in_progress = "in_progress"
-    completed = "completed"
+from models import TaskStatus
 
 
 class TaskBase(BaseModel):
     title: str
     description: Optional[str] = None
-    status: Optional[TaskStatus] = TaskStatus.pending
+    status: TaskStatus
     due_date: Optional[date] = None
+
+    @validator('status', pre=True, always=True)
+    def validate_status(cls, value):
+        if isinstance(value, TaskStatus):
+            return value
+        if isinstance(value, str):
+            return TaskStatus(value)
+        raise ValueError('Invalid status value', value)
 
 
 class TaskCreate(TaskBase):

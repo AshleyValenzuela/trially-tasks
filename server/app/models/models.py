@@ -31,3 +31,13 @@ class Task(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
 
     owner = relationship("User", back_populates="tasks")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'status': self.status.value,
+            'due_date': self.due_date,
+            'user_id': self.user_id,
+        }

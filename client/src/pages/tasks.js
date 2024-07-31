@@ -48,7 +48,7 @@ const TasksPage = ({ tasks }) => {
 };
 
 export async function getServerSideProps() {
-  const userId = 1; // Replace with actual user ID
+  const userId = 1; // Replace with actual user ID, hardcoding for now - Ashley
   const tasks = await fetchTasks(userId);
   return {
     props: {

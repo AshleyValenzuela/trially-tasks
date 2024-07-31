@@ -1,3 +1,10 @@
+-- Create enum type for task status --
+DO $$ BEGIN
+    CREATE TYPE task_status AS ENUM ('pending', 'in_progress', 'completed');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
 -- Create users table --
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
@@ -13,7 +20,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     title VARCHAR(100) NOT NULL,
     description TEXT,
     due_date DATE,
-    status VARCHAR(20) NOT NULL,
+    status task_status NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
