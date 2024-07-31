@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(100) NOT NULL
 );
 
 -- Create tasks table --
@@ -25,9 +26,9 @@ CREATE TABLE IF NOT EXISTS tasks (
 );
 
 -- Insert users --
-INSERT INTO users (first_name, last_name, email) VALUES
-('John', 'Doe', 'john.doe@example.com'),
-('Jane', 'Smith', 'jane.smith@example.com');
+INSERT INTO users (first_name, last_name, email, password_hash) VALUES
+('John', 'Doe', 'john.doe@example.com', 'hashed_password_1'),
+('Jane', 'Smith', 'jane.smith@example.com', 'hashed_password_2');
 
 -- Insert tasks for user1 --
 INSERT INTO tasks (user_id, title, description, due_date, status) VALUES

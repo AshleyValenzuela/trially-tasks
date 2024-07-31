@@ -1,2 +1,3 @@
-# local env files
-.env.*
+# local env files 
+# typically would ignore env files here but for assessment reviewer testing purposes, will comment out
+# .env.*
