@@ -18,7 +18,7 @@ app.include_router(users_router, prefix="/users", tags=["users"])
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello": "World of FastAPI"}
 
 
 if __name__ == "__main__":
