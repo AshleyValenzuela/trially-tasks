@@ -1,33 +1,48 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
+});
 
-export const fetchTasks = async (userId) => {
-  const response = await axios.get(`${API_URL}/tasks/?user_id=${userId}`);
-  return response.data;
+api.interceptors.response.use(
+  response => response,
+  error => {
+    console.error('API error:', error);
+    return Promise.reject(error);
+  }
+);
+
+export const createTask = async (taskData, userId) => {
+  try {
+    const response = await api.post(`/tasks/?user_id=${userId}`, taskData);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating task:', error);
+    throw error;
+  }
 };
 
-export const createTask = async (taskData) => {
-  const response = await axios.post(`${API_URL}/tasks/`, taskData);
+export const fetchTasks = async (userId) => {
+  const response = await api.get(`/tasks/?user_id=${userId}`);
   return response.data;
 };
 
 export const updateTask = async (taskId, taskData) => {
-  const response = await axios.put(`${API_URL}/tasks/${taskId}`, taskData);
+  const response = await api.put(`/tasks/${taskId}`, taskData);
   return response.data;
 };
 
 export const deleteTask = async (taskId) => {
-  const response = await axios.delete(`${API_URL}/tasks/${taskId}`);
+  const response = await api.delete(`/tasks/${taskId}`);
   return response.data;
 };
 
 export const registerUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/users/`, userData);
+  const response = await api.post(`/users/`, userData);
   return response.data;
 };
 
 export const loginUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/auth/login`, userData);
+  const response = await api.post(`/auth/login`, userData);
   return response.data;
 };

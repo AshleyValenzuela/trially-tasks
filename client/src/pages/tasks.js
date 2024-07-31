@@ -8,8 +8,9 @@ const TasksPage = ({ tasks }) => {
   const [taskList, setTaskList] = useState(tasks);
 
   const handleCreateTask = async (taskData) => {
+    const userId = 1; // Hardcode user ID to 1 for now bcs no auth yet - Ashley
     try {
-      const createdTask = await createTask(taskData);
+      const createdTask = await createTask(taskData, userId);
       setTaskList([...taskList, createdTask]);
     } catch (error) {
       console.error('Error creating task:', error);
@@ -48,7 +49,7 @@ const TasksPage = ({ tasks }) => {
 };
 
 export async function getServerSideProps() {
-  const userId = 1; // Replace with actual user ID, hardcoding for now - Ashley
+  const userId = 1; // Hardcode user ID to 1 for now bcs no auth yet - Ashley
   const tasks = await fetchTasks(userId);
   return {
     props: {

@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   } else if (req.method === 'POST') {
     try {
       const taskData = req.body;
-      const newTask = await createTask(taskData);
+      const newTask = await createTask(taskData, user_id);
       res.status(201).json(newTask);
     } catch (error) {
       res.status(500).json({ error: 'Failed to create task' });
