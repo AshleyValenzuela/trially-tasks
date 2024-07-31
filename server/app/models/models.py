@@ -1,17 +1,33 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, Date, Enum, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base
+import enum
 
-class Task(Base):
-    __tablename__ = "tasks"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    description = Column(String, index=True)
+
+class TaskStatus(enum.Enum):
+    pending = "pending"
+    in_progress = "in_progress"
+    completed = "completed"
+
 
 class User(Base):
-    __tablename__ = "users"
+    __tablename__ = 'users'
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True)
-    email = Column(String, unique=True, index=True)
-    full_name = Column(String)
-    hashed_password = Column(String)
+    first_name = Column(String(50), nullable=False)
+    last_name = Column(String(50), nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    password_hash = Column(String, nullable=False)
+
+    tasks = relationship("Task", back_populates="owner")
+
+
+class Task(Base):
+    __tablename__ = 'tasks'
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    description = Column(Text, nullable=True)
+    status = Column(Enum(TaskStatus), default=TaskStatus.pending)
+    due_date = Column(Date, nullable=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+
+    owner = relationship("User", back_populates="tasks")
