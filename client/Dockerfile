@@ -30,4 +30,4 @@ USER vscode
 EXPOSE 3000
 
 # Start the Next.js app
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

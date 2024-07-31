@@ -26,10 +26,13 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    volumes:
+      - ./server/app:/app
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     env_file:
       - .env.dev
     environment:
@@ -43,6 +46,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    volumes:
+      - ./client:/src
     depends_on:
       - backend
     env_file:
