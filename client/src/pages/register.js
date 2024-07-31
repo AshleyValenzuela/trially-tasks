@@ -11,7 +11,7 @@ const RegisterPage = () => {
     e.preventDefault();
     try {
       const newUser = await registerUser({ first_name: firstName, last_name: lastName, email, password });
-      // Handle registration success (e.g., redirect to login)
+      // Add handling of registration success (e.g., redirect to login)
     } catch (error) {
       console.error('Error registering:', error);
     }

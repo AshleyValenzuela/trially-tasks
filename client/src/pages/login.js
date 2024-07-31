@@ -37,9 +37,9 @@ const LoginPage = ({ user }) => {
 };
 
 export async function getServerSideProps(context) {
-  const user = {}; // Fetch user data if needed
+  const user = {}; // Fetch user data if needed - Ashley
   return {
-    props: { user }, // Pass user data to the page component as props
+    props: { user }, // Pass user data to the page component as props - Ashley
   };
 }
 

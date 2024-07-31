@@ -29,5 +29,5 @@ USER vscode
 # Expose port 3000 for the application
 EXPOSE 3000
 
-# Start the Next.js app
+# Start the Next.js app (in dev mode for now but should `CMD ["npm", "start"]` for prod set in .env.prod)
 CMD ["npm", "run", "dev"]
