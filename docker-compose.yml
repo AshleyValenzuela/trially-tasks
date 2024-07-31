@@ -7,10 +7,11 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: random_password_123!
-      POSTGRES_DB: db
+      POSTGRES_PASSWORD: hola
+      POSTGRES_DB: task_db
     volumes:
       - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     env_file:
       - .env.dev
     networks:
@@ -32,7 +33,7 @@ services:
     env_file:
       - .env.dev
     environment:
-      DATABASE_URL: postgresql://postgres:random_password_123!@db:5432/task_db
+      DATABASE_URL: postgresql://postgres:hola@db:5432/task_db
     networks:
       - default
 
