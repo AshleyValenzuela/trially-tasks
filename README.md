@@ -42,6 +42,9 @@ This project is a fullstack application designed for managing tasks. It is built
 - Backend: http://localhost:8000
 
 - Once you access the frontend, a navbar will guide you to four different pages: home, tasks, register, and login. Currently, you can only view 5 tasks under the tasks tab. Creating, updating, and deleting tasks as well as authenticating is in the works!
+
+<img width="1453" alt="Screenshot 2024-07-31 at 5 16 23 PM" src="https://github.com/user-attachments/assets/e5397892-d146-4346-b975-992fe958111a">
+
 ## Database Initialization
 - The Trially Tasks data model can be found here: https://drive.google.com/file/d/10QjRncXmrJOBkW2_LwjPhGwtwb5BMjTv/view?usp=sharing
 
