@@ -3,6 +3,7 @@ version: '3.8'
 services:
   db:
     image: postgres:13
+    container_name: trially-tasks-db-1
     ports:  
       - "5432:5432"
     environment:
@@ -26,6 +27,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    container_name: trially-tasks-backend-1
     volumes:
       - ./server/app:/app
     ports:
@@ -44,6 +46,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    container_name: trially-tasks-frontend-1
     ports:
       - "3000:3000"
     volumes:
@@ -60,3 +63,4 @@ volumes:
 
 networks:
   default:
+    driver: bridge
