@@ -27,30 +27,30 @@ This project is a fullstack application designed for managing tasks. It is built
 1. **Clone the repository:**
 
    `git clone https://github.com/AshleyValenzuela/trially-tasks.git`
-   cd <repository-directory>
 
 2. **Create environment files:**
 
-Environment files for prod, testing, and development have been included. Before deploying to production and for best practices/security, these would be added to the .gitignore. You can find them under .env.dev, .env.test, and .env.prod. 
+- Environment files for prod, testing, and development have been included. Before deploying to production and for best practices/security, these would be added to the .gitignore. You can find them under .env.dev, .env.test, and .env.prod. 
 
 3. **Build and run the containers:**
-For development:
+- For development:
 `docker-compose --env-file .env.dev up --build`
 
 4. **Access the application:**
 
-Frontend: http://localhost:3000
-Backend: http://localhost:8000
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
 
+- Once you access the frontend, a navbar will guide you to four different pages: home, tasks, register, and login. Currently, you can only view 5 tasks under the tasks tab. Creating, updating, and deleting tasks as well as authenticating is in the works!
 ## Database Initialization
-The Trially Tasks data model can be found here: https://drive.google.com/file/d/10QjRncXmrJOBkW2_LwjPhGwtwb5BMjTv/view?usp=sharing
+- The Trially Tasks data model can be found here: https://drive.google.com/file/d/10QjRncXmrJOBkW2_LwjPhGwtwb5BMjTv/view?usp=sharing
 
-The `init.sql` file is used to create the database tables and seed initial data. It is automatically executed when the PostgreSQL container is started.
+- The `init.sql` file is used to create the database tables and seed initial data. It is automatically executed when the PostgreSQL container is started.
 
 ## Next Steps to complete application and prepare for Production
 
 1. **Resolve Non-GET Request Issues:**
-   - Investigate and fix the issue causing a bug with POST, PUT, and DELETE requests. Currently, these requests cannot be made. Server is not receiving the requests.
+   - Investigate and fix the issue causing a bug with POST, PUT, and DELETE requests. Currently, these requests cannot be made. Server is not receiving the requests (likely due to a CORS or network issue with Docker).
 
 2. **Authentication and Authorization:**
    - Implement user authentication and authorization to secure the application using JWTs.
@@ -75,4 +75,4 @@ The `init.sql` file is used to create the database tables and seed initial data.
 
 ## Conclusion
 
-This project provides a solid foundation for a task management system using modern technologies like FastAPI, React, and Docker. By following the next steps outlined above, the application can be further improved and productionized.
+This project kicks off a task management system using modern technologies like FastAPI, React, and Docker. By following the next steps outlined above, the application can be wrapped up, further improved, and prepped for production!
