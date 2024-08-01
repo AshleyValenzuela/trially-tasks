@@ -3,13 +3,17 @@ FROM python:3.11-slim
 
 ARG USERNAME=vscode
 
-# Set the working directory
-WORKDIR /app
+# Set the working directory in the container to be the same as the host
+WORKDIR /server
 
-# Copy the requirements file, app code, and install dependencies
+# Copy the requirements file
 COPY requirements.txt .
-COPY app .
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
+COPY . .
 
 # Create a non-root user and group
 RUN groupadd -r $USERNAME && useradd -r -g $USERNAME $USERNAME
@@ -24,5 +28,5 @@ USER $USERNAME
 EXPOSE 8000
 
 # Command to run the FastAPI application using Python
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 

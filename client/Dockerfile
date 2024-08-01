@@ -1,20 +1,23 @@
 # Use the official Node.js image as the base image
 FROM node:18
 
-# Set the working directory
-WORKDIR /app
+# Set the working directory in the container to be the same as the host
+WORKDIR /client
 
-# Copy package.json and install dependencies
+# Copy package.json and package-lock.json
 COPY package.json package-lock.json ./
+
+# Install dependencies
 RUN npm install
 
 # Copy the rest of the application code
-COPY src ./
-
+COPY . .
 # Build the Next.js application
 RUN npm run build
 
 # Install production dependencies
+# (--only=production flag will ingore devdependencies
+# but otherwise dev packages and prod are the same)
 RUN npm install --only=production
 
 # Create a non-root user and group
