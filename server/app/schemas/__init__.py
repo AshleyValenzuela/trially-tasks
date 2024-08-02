@@ -1,2 +1,2 @@
-from schemas.task import Task, TaskCreate
-from schemas.user import User, UserCreate
+from .task import Task, TaskCreate
+from .user import User, UserCreate

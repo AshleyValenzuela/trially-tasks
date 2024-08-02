@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import List
-from schemas.task import Task
+from .task import Task
 
 
 class UserBase(BaseModel):
