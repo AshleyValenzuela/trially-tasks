@@ -1,36 +1,23 @@
-# Use the official Node.js image as the base image
+# Use an official Node.js runtime as a parent image
 FROM node:18
 
-# Set the working directory in the container to be the same as the host
+# Set the working directory inside the container
 WORKDIR /client
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json to the working directory
 COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Ensure that the `node_modules/.bin` directory is in the PATH
+ENV PATH /client/node_modules/.bin:$PATH
+
+# Copy the rest of the application code to the working directory
 COPY . .
-# Build the Next.js application
-RUN npm run build
 
-# Install production dependencies
-# (--only=production flag will ingore devdependencies
-# but otherwise dev packages and prod are the same)
-RUN npm install --only=production
-
-# Create a non-root user and group
-RUN groupadd -r vscode && useradd -r -g vscode vscode
-
-# Change ownership of the app directory to the vscode user
-RUN chown -R vscode:vscode ./
-
-# Switch to the non-root user
-USER vscode
-
-# Expose port 3000 for the application
+# Expose port 3000 to the host
 EXPOSE 3000
 
-# Start the Next.js app (in dev mode for now but should `CMD ["npm", "start"]` for prod set in .env.prod)
+# Start the application using the 'dev' script from package.json
 CMD ["npm", "run", "dev"]

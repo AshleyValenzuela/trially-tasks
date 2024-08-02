@@ -50,14 +50,16 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./client:/client
-      - /app/node_modules
+      - ./client:/client # Bind mount volume. Directly links the host directory to the container directory. Useful for development to share code and dependencies.
+      - /client/node_modules # Named volume. Docker manages the volume's location. Data is persisted between container restarts but not directly linked to my project's directory on the host machine.
     depends_on:
       - backend
     env_file:
       - .env.dev
     networks:
       - default
+    environment:
+      NODE_ENV: development
 
 volumes:
   db_data:
