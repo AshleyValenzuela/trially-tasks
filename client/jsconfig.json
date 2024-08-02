@@ -1,3 +1,10 @@
+/*
+file is used for configuring the JS dev environment,ie 
+for resolving module paths and other compilation settings.
+This file is particularly useful in a Next.js project to set up aliases
+and make module imports cleaner and more manageable.
+*/
+
 {
   "compilerOptions": {
     "baseUrl": ".",
