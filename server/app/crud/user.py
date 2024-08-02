@@ -1,5 +1,5 @@
-import models as models
-import schemas as schemas
+from .. import models
+from .. import schemas
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 

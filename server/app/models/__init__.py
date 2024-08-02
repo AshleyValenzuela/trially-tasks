@@ -1,1 +1,1 @@
-from models.models import Base, User, Task, TaskStatus
+from .models import Base, User, Task, TaskStatus

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, validator
 from typing import Optional
 from datetime import date
-from models import TaskStatus
+from ..models import TaskStatus
 
 
 class TaskBase(BaseModel):

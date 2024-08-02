@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
+  baseURL: typeof window === 'undefined' // Check if code is running on browser or server side
+    ? process.env.NEXT_PUBLIC_API_URL_SERVER_SIDE // Use server-side URL
+    : process.env.NEXT_PUBLIC_API_URL_CLIENT_SIDE // Use client-side URL
 });
 
 api.interceptors.response.use(

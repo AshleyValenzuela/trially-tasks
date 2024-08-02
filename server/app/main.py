@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-import crud as crud
-import schemas as schemas
-import models as models
-from database import engine
-from routers import tasks_router, users_router
+from . import crud
+from . import schemas
+from . import models
+from .database import engine
+from .routers import tasks, users
 import os
 
 # Creates all database tables
@@ -26,8 +26,8 @@ app.add_middleware(
 )
 
 # Includes the routers
-app.include_router(tasks_router, prefix="/tasks", tags=["tasks"])
-app.include_router(users_router, prefix="/users", tags=["users"])
+app.include_router(tasks.router, prefix="/tasks", tags=["tasks"])
+app.include_router(users.router, prefix="/users", tags=["users"])
 
 
 @app.get("/")

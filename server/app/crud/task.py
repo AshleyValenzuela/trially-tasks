@@ -1,5 +1,5 @@
-import models as models
-import schemas as schemas
+from .. import models
+from .. import schemas
 from sqlalchemy.orm import Session
 
 
@@ -21,7 +21,7 @@ def create_task(db: Session, task: schemas.TaskCreate, user_id: int):
 
 def update_task(db: Session, task_id: int, task: schemas.TaskCreate):
     db_task = db.query(models.Task).filter(
-        models.Task.task_id == task_id).first()
+        models.Task.id == task_id).first()
     for key, value in task.dict().items():
         setattr(db_task, key, value)
     db.commit()
@@ -31,7 +31,7 @@ def update_task(db: Session, task_id: int, task: schemas.TaskCreate):
 
 def delete_task(db: Session, task_id: int):
     db_task = db.query(models.Task).filter(
-        models.Task.task_id == task_id).first()
+        models.Task.id == task_id).first()
     db.delete(db_task)
     db.commit()
     return db_task

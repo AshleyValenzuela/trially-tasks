@@ -20,7 +20,7 @@ const TasksPage = ({ tasks }) => {
   const handleDeleteTask = async (taskId) => {
     try {
       await deleteTask(taskId);
-      setTaskList(taskList.filter((task) => task.task_id !== taskId));
+      setTaskList(taskList.filter((task) => task.id !== taskId));
     } catch (error) {
       console.error('Error deleting task:', error);
     }
@@ -28,8 +28,8 @@ const TasksPage = ({ tasks }) => {
 
   const handleUpdateTask = async (task) => {
     try {
-      const updatedTask = await updateTask(task.task_id, task);
-      setTaskList(taskList.map(t => t.task_id === task.task_id ? updatedTask : t));
+      const updatedTask = await updateTask(task.id, task);
+      setTaskList(taskList.map(t => t.id === task.id ? updatedTask : t));
     } catch (error) {
       console.error('Error updating task:', error);
     }

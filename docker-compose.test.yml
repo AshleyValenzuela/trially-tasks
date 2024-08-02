@@ -6,3 +6,5 @@ services:
   frontend:
     env_file:
       - .env.test
+    environment:
+      NODE_ENV: test
